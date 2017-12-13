@@ -1,0 +1,19 @@
+@import 'reset';
+@import 'vars';
+@import '_header';
+@import '_container';
+@import '_modal';
+
+body {
+  background: $color-global-bg;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #444;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+a {
+  color:#009FDA;
+}

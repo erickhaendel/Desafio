@@ -1,0 +1,76 @@
+<section class="container-box" infinite-scroll="self.loadMore()">
+  <article class="box" ng-repeat="shot in self.shots">
+    <div class="shot" data-ng-click="self.openShot(shot.id)">
+      <header class="shot-header">
+        <div class="shot-header-image">
+          <img data-ng-src="{{shot.images.normal}}" alt="">
+        </div>
+        <h2 class="shot-header-title" data-ng-format-text data-text="{{shot.title}}" data-length="23"></h2>
+      </header>
+
+      <section class="shot-body">
+        <div data-ng-format-text data-text="{{shot.description}}" data-length="20"></div>
+      </section>
+
+      <footer class="shot-footer">
+        <a href="javascript:void(0)" class="interact-count">
+          <i class="fas fa-eye"></i> {{shot.views_count}}</a>
+        <a href="javascript:void(0)" class="interact-count">
+          <i class="fas fa-comments"></i> {{shot.comments_count}} </a>
+        <a href="javascript:void(0)" class="interact-count">
+          <i class="fas fa-heart"></i> {{shot.likes_count}} </a>
+      </footer>
+    </div>
+  </article>
+</section>
+
+<!-- Box do Modal -->
+<section class="modal" data-ng-show="self.modal.show" ng-body-fixed="self.modal.show">
+  <!-- Fundo, overlay -->
+  <div class="modal-overlay" data-ng-click="self.closeModal()"></div>
+  <!-- Modal -->
+  <div class="modal-content" data-ng-click="self.nothing()">
+
+    <!-- cabeçalho -->
+    <header class="modal-header">
+      <div class="profile-info">
+        <picture class="image">
+          <img data-ng-src="{{self.shot.user.avatar_url}}" alt="Usuário Foto de Perfil">
+        </picture>
+
+        <h2 class="title-primary">{{self.shot.title}}</h2>
+        <span class="title-sub">de {{self.shot.user.name}} para {{self.shot.team.name}}, em {{self.shot.updated_at}}</span>
+
+        <div class="interactive">
+            <a href="javascript:void(0)" class="interact-count">
+                <i class="fas fa-eye"></i> {{self.shot.views_count}}</a>
+              <a href="javascript:void(0)" class="interact-count">
+                <i class="fas fa-comments"></i> {{self.shot.comments_count}} </a>
+              <a href="javascript:void(0)" class="interact-count">
+                <i class="fas fa-heart"></i> {{self.shot.likes_count}} </a>  
+        </div>      
+      </div>
+    </header>
+
+    <!-- Conteudo do modal -->
+    <section class="modal-body">
+      <div class="box-detail-shot">
+        <img data-ng-src="{{self.shot.images.hidpi}}" alt="" class="image-shot">
+
+        <div class="text-shot" ng-bind-html="self.shot.description"></div>
+
+        <div class="tags-shot">
+          <h3 class="title">Tags</h3>
+          <span class="tag" data-ng-repeat="tag in self.shot.tags">{{tag}}</span>
+        </div>
+      </div>
+
+      
+    </section>
+  </div>
+
+  <!-- Fechar modal -->
+  <a href="javascript:void(0)" class="modal-close" data-ng-click="self.closeModal()">
+    <i class="fas fa-times"></i>
+  </div>
+</section>
