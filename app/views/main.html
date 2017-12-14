@@ -1,6 +1,6 @@
 <section class="container-box" infinite-scroll="self.loadMore()">
-  <article class="box" ng-repeat="shot in self.shots">
-    <div class="shot" data-ng-click="self.openShot(shot.id)">
+  <div class="box shot-list" ng-repeat="shot in self.shots">
+    <div class="shot-item" data-ng-click="self.openShot(shot.id)">
       <header class="shot-header">
         <div class="shot-header-image">
           <img data-ng-src="{{shot.images.normal}}" alt="">
@@ -21,7 +21,7 @@
           <i class="fas fa-heart"></i> {{shot.likes_count}} </a>
       </footer>
     </div>
-  </article>
+  </div>
 </section>
 
 <!-- Box do Modal -->

@@ -1,3 +1,5 @@
+// Modal de Informação
+
 .modal {
 
     top: 0;
@@ -9,8 +11,9 @@
     overflow-y: scroll;
     box-sizing: border-box;
 
+    // Fundo Modal
     .modal-overlay {
-        background: rgba(30,30,30,0.9);
+        background: $color-bg-overlay;
         top: 0;
         left: 0;
         z-index: 9997;
@@ -19,55 +22,50 @@
         position: fixed;    
     }
 
+    .modal-header{            
+        padding: 40px 95px;
+    }
+
+    // Box do modal onde ficam os dados
     .modal-content {
-        position: absolute;
-        z-index: 9997;
-        top: 20px;
-        // left: 50%;
-        // width: 920px;
+        position: relative;
+        z-index: 9997;        
         width: 100%;
-        // margin-left: -460px;
-        // padding: 40px 95px;
         background: #f4f4f4;
         background-position: fixed;
         box-sizing: border-box;
         border-radius: 2px;
-        margin-bottom: 20px;
+        margin: 30px auto;
     }
 
-    /* Telefones em paisagem e abaixo */
-    @media (max-width: 480px) { 
+    @include respond-to($phone) {
+        .modal-header {
+            padding:20px 20px;
+        }
+        
         .modal-content {
             max-width: 480px;
         }
-    
     }
 
-    /* Telefones em paisagem a tablet em retrato */
-    @media (min-width: 481px) and (max-width: 767px) {
-         .modal-content {
-            max-width: 750px;
+    @include respond-to($tablet-portrait) {
+        .modal-content {
+            max-width: 720px;
         }
-    }
-
-    /* Tablet em retrato a paisagem e desktop */
-    @media (min-width: 768px) and (max-width: 979px) {
-         .modal-content {
-            max-width: 970px;
+      }
+      @include respond-to($tablet-landscape) {
+        .modal-content {
+            max-width: 780px;
         }
-    }
+      }  
 
-    /* Desktop grande */
-    @media (min-width: 1200px) {
-         .modal-content {
-            max-width: 1170px;
+    @include respond-to($large-desktop) {
+        .modal-content {
+            max-width: 920px;
         }
+    }  
 
-    }
-
-    .modal-header{            
-        padding: 40px 95px;
-    }
+   
 
     .modal-close {
         position: absolute;
@@ -78,83 +76,4 @@
         font-size: 33px;
     }
   
-}
-
-// Informações de Perfil, Foto , Titulo e Sub Titulo
-
-.profile-info {
-    padding-left: 60px;
-    position: relative;
-
-    .image {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        overflow: hidden;
-        position: absolute;
-        left: 0;
-        top: 0;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .title-primary {
-        margin: 0;
-        padding: 0;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 1.5;
-    }
-
-    .title-sub {
-        color: #555;
-        font-size: 12px;
-    }
-
-    .interactive{
-        width: 90px;
-        position: absolute;
-        top:0;
-        right: 0;
-
-        .interact-count {
-            width: 100%;
-            display: inline-block;
-        }
-    }
-}
-
-// Detalhe do Box
-
-.box-detail-shot {
-    .image-shot {
-        width: 100%;
-    }
-
-    .text-shot, .tags-shot {
-        padding: 20px 95px;
-        font-size: 14px;
-        color: #333;
-        line-height: 1.5;
-    }
-
-    .title {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-}
-
-// TAGS
-
-.tag {
-    background: $color-gray-dark;
-    font-size: 12px;
-    color: #333;
-    border-radius:2px;
-    display: inline-block;
-    padding: 2px 5px;
-
-    margin: 2px 2px;
 }

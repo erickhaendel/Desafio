@@ -1,0 +1,15 @@
+
+
+.interact-count {
+    font-size: 12px;
+    text-decoration: none;
+    color: #aaa;
+
+    &:hover{
+        color: #009FDA;
+
+        .fa-heart{
+            color: red;
+        }
+    }
+}

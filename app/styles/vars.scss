@@ -1,5 +1,5 @@
 // Cores Gerais
-$color-black: #333;
+$color-dark: #333;
 $color-gray: #dedede;
 $color-gray-dark: #ccc;
 $color-clean: #fff;
@@ -8,14 +8,36 @@ $color-success: green;
 $color-danger: red;
 $color-warning: yellow;
 
+$color-bg-overlay : rgba(30,30,30,0.9);
+
 // Cores Especificas
 
 $color-global-bg : $color-gray;
 
 // Tamanhos
 
+$line-height: 1.5;
+$font-size-small: 10px;
+$font-size-default: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 22px;
 
 // Espaçamentos
 
-$padding-default : 10px ;
-$margin-default : 10px ;
+$padding-default : 20px ;
+$padding-large : 20px 95px;
+$margin-default : 10px;
+
+// Telass
+
+$phone : '(max-width: 480px)';
+$tablet-portrait: '(max-width: 767px)';
+$tablet-landscape: '(min-width: 768px) and (max-width: 979px)';
+$large-desktop: '(min-width: 1200px)';
+$non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)';
+$retina: '(min--moz-device-pixel-ratio: 1.5), 
+                    (-o-min-device-pixel-ratio: 3/2), 
+                    (-webkit-min-device-pixel-ratio: 1.5), 
+                    (min-device-pixel-ratio: 1.5), 
+                    (min-resolution: 144dpi), 
+                    (min-resolution: 1.5dppx)';

@@ -1,0 +1,34 @@
+
+// Box de Informação do SHOT
+// ==========================
+
+.box-detail-shot {
+
+    // Imagem de DEstaque
+    .image-shot {
+        width: 100%;
+    }
+
+    // Titulo das seções
+    .title {
+        font-size: $font-size-lg;
+        margin-bottom: 10px;
+    }
+
+    // Textos e tags
+    .text-shot, .tags-shot {
+        padding: $padding-large;
+        font-size: $font-size-default;
+        color: $color-dark;
+        line-height: $line-height;
+    }
+
+
+    // Responsividade
+    @include respond-to($phone) {
+        .text-shot, .tags-shot {
+            padding: $padding-default;
+        }        
+    }
+   
+}

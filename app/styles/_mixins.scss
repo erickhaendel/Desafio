@@ -1,0 +1,8 @@
+// Mixins
+
+// Media  Query
+@mixin respond-to($media) {
+    @media only screen and #{$media} {
+        @content;
+    }
+}
