@@ -1,64 +1,62 @@
-'use strict';
+(function () {
 
-/**
- * @ngdoc function
- * @name desafioApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the desafioApp
- */
-angular.module('desafioApp')
-  .controller('MainCtrl', function ($scope, dribbbleService) {
+  'use strict';
+
+  /**
+   * @ngdoc function
+   * @name desafioApp.controller:MainCtrl
+   * @description
+   * # MainCtrl
+   * Controller of the desafioApp
+   */
+  function MainCtrl($scope, dribbbleService) {
     var self = this;
 
+    // Informações iniciais
     self.shots = [];
     self.shot = {};
     self.modal = {
-      show : false
+      show: false
     }
     self.page = 1;
 
-    function initialize() {
-      dribbbleService.getPopularShots(self.page).then(renderShots, clearShots);
+    // Buscar shots por uma determinada pagina
+    function getShots() {
+      dribbbleService.getPopularShots(self.page)
+        .then(function (res) {
+          self.shots = self.shots.concat(res.data);
+        }, function () {
+          self.shots = [];
+        });
     }
 
-
-    function renderShots(shots) {
-      self.shots = self.shots.concat(shots.data);
-    }
-
-    /*
-    * Limpa a lista de 'shots'
-    */
-    function clearShots() {
-      self.shots = [];
-      // $core.runningSroll = true;
-      // $core.setLoading(false);
-    }
-
+    // Carregar mais Shots
     self.loadMore = function () {
+      // Adicionar mais um em paginas para pegar a proxima
       self.page++;
-      initialize();
+      getShots();
     };
 
+    // Abrir um shot Especifico
     self.openShot = function (id) {
       dribbbleService.getShot(id).then(function (data) {
         self.shot = data.data;
         self.modal.show = true;
-        console.log(self.shot);
       }, function () {
-        console.log('Falha');
         self.modal.show = false;
       });
     }
 
-    self.closeModal = function(){
+    // Fechar modal, clicando no botão ao na overlay
+    self.closeModal = function () {
       self.modal.show = false;
     }
 
-    self.nothing= function(e){
-      console.log(e);
-    }
+    // Iniciar a busca de shots ao carregar controller.
+    getShots();
+  }
 
-    initialize();
-  });
+  angular.module('desafioApp')
+    .controller('MainCtrl', MainCtrl);
+    
+})();

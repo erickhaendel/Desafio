@@ -1,15 +1,15 @@
-
+// Contadores de Interação de usuários
 
 .interact-count {
-    font-size: 12px;
+    font-size: $font-size-default;
     text-decoration: none;
-    color: #aaa;
+    color: $color-gray-dark;
 
     &:hover{
-        color: #009FDA;
+        color: $color-info;
 
         .fa-heart{
-            color: red;
+            color: $color-danger;
         }
     }
 }

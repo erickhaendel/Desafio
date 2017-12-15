@@ -1,10 +1,12 @@
 
 // Informações de Perfil, Foto , Titulo e Sub Titulo
+// ==================================================
 
 .profile-info {
     padding-left: 60px;
     position: relative;
 
+    // Foto do Usuário
     .image {
         width: 50px;
         height: 50px;
@@ -19,19 +21,22 @@
         }
     }
 
+    // Titulo Primeiro
     .title-primary {
         margin: 0;
         padding: 0;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 1.5;
+        font-size: $font-size-xl;
+        font-weight: $font-bold;
+        line-height: $line-height;
     }
 
+    // Subtitulo
     .title-sub {
-        color: #555;
-        font-size: 12px;
+        color: $color-gray-dark;
+        font-size: $font-size-default;
     }
 
+    // Botões de interaçao
     .interactive{
         width: 90px;
         position: absolute;

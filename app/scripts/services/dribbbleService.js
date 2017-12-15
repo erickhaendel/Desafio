@@ -10,8 +10,8 @@
 
         /*jshint camelcase: false */
         var service = {
-            access_token: 'e90d315594bc7d941db90544b1440ea22fecd5327e2a6f37a91977fbd0915e6c',
-            token_type: 'concreteDevApp',
+            access_token: 'c8fec4330a56c65cfcbf63a278037dd27eae8a7b512a27bcad7bf98beeb19cf2',
+            token_type: 'bearer',
             url: 'https://api.dribbble.com/v1/shots/'
         };
 

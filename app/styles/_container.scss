@@ -7,21 +7,19 @@
     width: 100%;
     display: grid;
     padding: $padding-default 0;
-
-    grid-template-columns: 100%;
-    grid-gap:  20px 0px;
+    grid-template-columns: 49% 49%;
+    grid-gap:  20px 1%;
 }
 
 
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: $padding-default;
+    padding-left: $padding-default;
     margin-right: auto;
     margin-left: auto;
 }
 
-/* Telefones em paisagem e abaixo */
-@media (max-width: 480px) { 
+@include respond-to($phone) {
     .container {
         max-width: 480px;
     }
@@ -32,10 +30,9 @@
     }
 }
 
-/* Telefones em paisagem a tablet em retrato */
-@media (min-width: 481px) and (max-width: 767px) {
+@include respond-to($tablet-portrait) {
     .container {
-        max-width: 750px;
+        max-width: 720px;
     }
 
     .container-box{
@@ -44,20 +41,18 @@
     }
 }
 
-/* Tablet em retrato a paisagem e desktop */
-@media (min-width: 768px) and (max-width: 979px) {
+@include respond-to($tablet-landscape) {
     .container {
-        max-width: 970px;
+        max-width: 780px;
     }
 
     .container-box{
-        grid-template-columns: 32%  32%  32%;
+        grid-template-columns: 49% 49%;
         grid-gap:  20px 1%;
     }
-}
+}  
 
-/* Desktop grande */
-@media (min-width: 1200px) {
+@include respond-to($large-desktop) {
     .container {
         max-width: 1170px;
     }
@@ -66,6 +61,4 @@
         grid-template-columns: 32%  32%  32%;
         grid-gap:  20px 1%;
     }
-}
-
-
+}  

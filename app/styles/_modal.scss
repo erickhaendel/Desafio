@@ -22,6 +22,7 @@
         position: fixed;    
     }
 
+    // Cabeçalho do modal
     .modal-header{            
         padding: 40px 95px;
     }
@@ -37,6 +38,20 @@
         border-radius: 2px;
         margin: 30px auto;
     }
+
+       
+    // Botão para fechar o modal
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: $color-clean;
+        z-index: 9999;
+        font-size: 33px;
+    } 
+
+    // Responsividade
+    // ================
 
     @include respond-to($phone) {
         .modal-header {
@@ -65,15 +80,5 @@
         }
     }  
 
-   
-
-    .modal-close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        color: #fff;
-        z-index: 9999;
-        font-size: 33px;
-    }
-  
+ 
 }
