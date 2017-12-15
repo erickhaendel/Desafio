@@ -48,4 +48,17 @@
             display: inline-block;
         }
     }
+
+
+    @include respond-to($phone) {
+        .interactive{
+            position: relative;
+            width: 100%;
+
+            .interact-count {
+                display: inline;
+            }
+        }
+    }
+
 }

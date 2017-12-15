@@ -47,7 +47,17 @@
         right: 20px;
         color: $color-clean;
         z-index: 9999;
-        font-size: 33px;
+        font-size: $font-size-xl;
+        width: 22px;
+        height: 22px;
+        padding: $padding-default / 2;
+        border-radius: 50%;
+        background: $color-dark;
+        text-align: center;
+        border: 3px solid #fff;
+        i {
+            vertical-align: middle;
+        }
     } 
 
     // Responsividade

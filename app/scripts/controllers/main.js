@@ -39,6 +39,8 @@
 
     // Abrir um shot Especifico
     self.openShot = function (id) {
+      // Limpar Conteudo
+      self.shot = {};
       dribbbleService.getShot(id).then(function (data) {
         self.shot = data.data;
         self.modal.show = true;
