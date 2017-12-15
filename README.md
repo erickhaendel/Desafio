@@ -1,5 +1,7 @@
 # Desafio Concrete Front-end #
 
+Para conhecer a versão on-line, acesse [https://erickhaendel.github.io/Desafio/#!/] 
+
 **Proposta:**  
 Implementar uma aplicação completamente client-side, que consulte a API do Dribbble e mostre os shots mais populares. Esta aplicação deve funcionar nos navegadores mais recentes do mercado.  
 
